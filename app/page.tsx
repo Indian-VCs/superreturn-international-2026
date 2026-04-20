@@ -16,6 +16,7 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-inner">
+          <div className="the-link" aria-hidden="true" />
           <div className="hero-eye">
             <span aria-hidden="true" className="dot" />
             {site.heroDate} · {site.heroLocation}
@@ -27,10 +28,10 @@ export default function HomePage() {
           <div className="hero-meta">
             {eventFacts.map((fact, index) => (
               <span className="hm" key={fact}>
-                <strong>{fact}</strong>
+                {fact}
                 {index < eventFacts.length - 1 ? (
                   <span className="hm-sep" aria-hidden="true">
-                    {" · "}
+                    ·
                   </span>
                 ) : null}
               </span>
@@ -52,6 +53,9 @@ export default function HomePage() {
           <div className="the-link" aria-hidden="true" />
           <div className="lb">Our Take</div>
           <h2 className="st">Is it worth the trip? Our honest view.</h2>
+          <p className="sd take-intro">
+            <em>{takeFootnote}</em>
+          </p>
 
           {takeCards.map((card) => (
             <div className="take" key={card.title}>
@@ -69,10 +73,6 @@ export default function HomePage() {
               ))}
             </div>
           ))}
-
-          <p className="take-footnote">
-            <em>{takeFootnote}</em>
-          </p>
         </div>
       </section>
 
@@ -150,7 +150,7 @@ export default function HomePage() {
               <p key={note}>{note}</p>
             ))}
             <ButtonLink href={contactLinks.sideEvents} variant="secondary">
-              Ping us → {site.contactEmail}
+              Ping us →
             </ButtonLink>
           </div>
         </div>
@@ -183,8 +183,9 @@ export default function HomePage() {
 
             <div className="cta-primary">
               <ButtonLink href={contactLinks.general} variant="primary">
-                Reach Out → {site.contactEmail}
+                Reach Out →
               </ButtonLink>
+              <span className="cta-primary-email">{site.contactEmail}</span>
             </div>
 
             <p className="cta-fine">
