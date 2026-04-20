@@ -3,9 +3,11 @@ export type NavItem = {
   label: string;
 };
 
+export type TakeCardSegment = string | { bold: string };
+
 export type TakeCard = {
   title: string;
-  body: string;
+  body: TakeCardSegment[];
 };
 
 export type ScheduleEntry = {
@@ -77,13 +79,20 @@ export const contactLinks = {
 export const takeCards: TakeCard[] = [
   {
     title: "For established fund managers",
-    body:
-      "European Fund of Funds are actively looking at India right now — and SuperReturn is where they are. If European family offices, sovereign wealth, or US endowments are on your LP target list, this is a high-signal room. The hallway conversations matter more than the panels. If you have warm leads with European allocators, this is where you make them real.",
+    body: [
+      "European Fund of Funds are actively looking at India right now — and SuperReturn is where they are. If European family offices, sovereign wealth, or US endowments are on your LP target list, this is a high-signal room. The hallway conversations matter more than the panels. ",
+      {
+        bold: "If you have warm leads with European allocators, this is where you make them real.",
+      },
+    ],
   },
   {
     title: "For emerging managers",
-    body:
-      "This isn't where you'll close your first commitment — and that's fine. The Asia-focused LP circuit is already saturated with India deal flow; the LPs here are a different audience. Think of it as uncharted territory: European and US allocators who haven't yet formed a view on India. Go to learn the room, not to pitch. The relationships you build now pay off over 2–3 fundraising cycles.",
+    body: [
+      "This isn't where you'll close your first commitment — and that's fine. The Asia-focused LP circuit is already saturated with India deal flow; the LPs here are a different audience. ",
+      { bold: "Think of it as uncharted territory:" },
+      " European and US allocators who haven't yet formed a view on India. Go to learn the room, not to pitch. The relationships you build now pay off over 2–3 fundraising cycles.",
+    ],
   },
 ];
 

@@ -56,7 +56,15 @@ export default function HomePage() {
           {takeCards.map((card) => (
             <div className="take" key={card.title}>
               <h3>{card.title}</h3>
-              <p>{card.body}</p>
+              <p>
+                {card.body.map((segment, i) =>
+                  typeof segment === "string" ? (
+                    segment
+                  ) : (
+                    <strong key={i}>{segment.bold}</strong>
+                  ),
+                )}
+              </p>
             </div>
           ))}
 
