@@ -36,6 +36,10 @@
   --charcoal-surface-strong: rgba(248, 248, 238, 0.08);
   --charcoal-surface-border: rgba(248, 248, 238, 0.1);
   --charcoal-surface-border-strong: rgba(248, 248, 238, 0.14);
+
+  /* Motion */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ── Reset ── */
@@ -765,4 +769,113 @@ section[id] {
   height: 16px;
   width: auto;
   display: block;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   Motion
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Hero entrance — staggered on page load ── */
+@keyframes hero-link-bar {
+  from {
+    width: 0;
+    opacity: 0.4;
+  }
+  to {
+    width: 48px;
+    opacity: 1;
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero .the-link {
+  animation: hero-link-bar 520ms var(--ease-out-quart) both;
+  animation-delay: 80ms;
+}
+
+.hero-eye,
+.hero h1,
+.hero-sub,
+.hero-meta,
+.hero-ctas {
+  animation: hero-fade-up 520ms var(--ease-out-quart) both;
+  will-change: opacity, transform;
+}
+
+.hero-eye {
+  animation-delay: 180ms;
+}
+.hero h1 {
+  animation-delay: 260ms;
+}
+.hero-sub {
+  animation-delay: 360ms;
+}
+.hero-meta {
+  animation-delay: 460ms;
+}
+.hero-ctas {
+  animation-delay: 560ms;
+}
+
+/* ── Section scroll reveal ── */
+/* Only kicks in when JS has marked body.js-ready AND the section itself
+   has been tagged .reveal (below-the-fold on mount). Sections already in
+   view stay instant, avoiding a flash of hidden content. */
+body.js-ready .sec.reveal {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  transition:
+    opacity 600ms var(--ease-out-quart),
+    transform 600ms var(--ease-out-quart);
+  will-change: opacity, transform;
+}
+
+body.js-ready .sec.reveal .the-link {
+  width: 0;
+  transition: width 700ms var(--ease-out-quart) 140ms;
+}
+
+body.js-ready .sec.reveal.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+body.js-ready .sec.reveal.is-in .the-link {
+  width: 48px;
+}
+
+/* ── Reduced motion — disable all of the above ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero .the-link,
+  .hero-eye,
+  .hero h1,
+  .hero-sub,
+  .hero-meta,
+  .hero-ctas {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  body.js-ready .sec.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  body.js-ready .sec.reveal .the-link {
+    width: 48px;
+    transition: none;
+  }
 }
