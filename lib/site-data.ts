@@ -83,10 +83,10 @@ export const takeCards: TakeCard[] = [
     title: "For established fund managers",
     body: [
       [
-        "We've met a couple of European Fund of Funds and other allocators this year who have already invested in a few India funds and are actively scouting to back a few more. Their interest tends to concentrate on fintech, impact, and deep tech. They're open to secondaries and co-investments.",
+        "We've met a few European Fund of Funds and other allocators this year who have already invested in a few India funds and are actively scouting to back a few more. Their interest tends to concentrate on fintech, impact, and deep tech. They're open to secondaries and co-investments.",
       ],
       [
-        "Our take: if you're already in a conversation with any of them, ",
+        "A few of them come to Berlin with a clear shortlist in mind — these aren't passive conversations. Our take: if you're already in touch with any of them, ",
         {
           bold: "Berlin is a good place to take those conversations deeper in person.",
         },
