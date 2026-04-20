@@ -8,3 +8,10 @@ npm-debug.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# OpenNext / Cloudflare build output
+.open-next
+.wrangler
+
+# Generated Cloudflare types
+cloudflare-env.d.ts
