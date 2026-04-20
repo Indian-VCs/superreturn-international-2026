@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: site.title,
     description: site.description,
   },
@@ -35,11 +37,15 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com" rel="preconnect" />
         <link crossOrigin="" href="https://fonts.gstatic.com" rel="preconnect" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body><main>{children}</main></body>
+      <body>
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }

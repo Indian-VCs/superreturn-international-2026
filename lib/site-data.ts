@@ -3,21 +3,9 @@ export type NavItem = {
   label: string;
 };
 
-export type StoryCard = {
-  href: string;
-  label: string;
-  title: string;
-  description: string;
-};
-
 export type TakeCard = {
   title: string;
   body: string;
-};
-
-export type GuidanceList = {
-  title: string;
-  items: string[];
 };
 
 export type ScheduleEntry = {
@@ -36,6 +24,7 @@ export type ScheduleGroup = {
   label: string;
   window: string;
   days: ScheduleDay[];
+  main?: boolean;
 };
 
 export type Offer = {
@@ -58,27 +47,25 @@ export const site = {
   officialSite: "https://informaconnect.com/superreturn-international/",
   homepage: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.indianvcs.com",
   logoHref: "https://www.indianvcs.com",
-  berlinImage:
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Berlin%20skyline%202009.jpg",
   partnerCode: "FKR3646IVCS",
   heroDate: "June 2026",
   heroLocation: "Berlin",
+  heroHeadline: "SuperReturn International",
   heroSummary:
-    "6,000+ senior decision-makers. 2,000+ LPs. 80+ countries. Here is what Indian fund managers need to know - and how we can help.",
+    "6,000+ senior decision-makers. 2,000+ LPs. 80+ countries. Here's what Indian fund managers need to know — and how we can help.",
 };
 
 export const navItems: NavItem[] = [
-  { href: "/", label: "Overview" },
-  { href: "/our-take", label: "Our Take" },
-  { href: "/schedule", label: "Schedule" },
-  { href: "/side-events", label: "Side Events" },
+  { href: "#our-take", label: "Our Take" },
+  { href: "#schedule", label: "Schedule" },
+  { href: "#side-events", label: "Side Events" },
 ];
 
 export const eventFacts = [
-  "Jun 8-12, 2026",
+  "Jun 8–12, 2026",
   "InterContinental, Berlin",
-  "500+ speakers",
-  "80+ countries",
+  "500+ Speakers",
+  "80+ Countries",
 ];
 
 export const contactLinks = {
@@ -87,66 +74,26 @@ export const contactLinks = {
   general: buildMailto("SuperReturn 2026 - Indian VCs"),
 };
 
-export const storyCards: StoryCard[] = [
-  {
-    href: "/our-take",
-    label: "Should you go?",
-    title: "A clear read on when the trip is worth it",
-    description:
-      "The room matters most when Europe and the US are already in your LP map, or when you want to start building that map now.",
-  },
-  {
-    href: "/schedule",
-    label: "What to prioritize",
-    title: "Five days split between summits and the main conference",
-    description:
-      "The first two days are track-driven. The last three days are where the larger allocator network comes together.",
-  },
-  {
-    href: "/side-events",
-    label: "How we help",
-    title: "Discount codes, prep, side-event coordination, and local signal",
-    description:
-      "We are already collecting interest from Indian and Asia-focused GPs heading to Berlin that week.",
-  },
-];
-
 export const takeCards: TakeCard[] = [
   {
     title: "For established fund managers",
     body:
-      "European funds of funds are actively looking at India right now, and SuperReturn is where they are. If European family offices, sovereign wealth funds, or US endowments are already on your LP target list, this is a high-signal room. The hallway conversations matter more than the panels. If you have warm leads with European allocators, this is where you make them real.",
+      "European Fund of Funds are actively looking at India right now — and SuperReturn is where they are. If European family offices, sovereign wealth, or US endowments are on your LP target list, this is a high-signal room. The hallway conversations matter more than the panels. If you have warm leads with European allocators, this is where you make them real.",
   },
   {
     title: "For emerging managers",
     body:
-      "This is not where you will close your first commitment - and that is fine. The Asia-focused LP circuit is already saturated with India deal flow; the LPs here are a different audience. Think of it as uncharted territory: European and US allocators who have not yet formed a view on India. Go to learn the room, not to pitch. The relationships you build now can pay off over two or three fundraising cycles.",
+      "This isn't where you'll close your first commitment — and that's fine. The Asia-focused LP circuit is already saturated with India deal flow; the LPs here are a different audience. Think of it as uncharted territory: European and US allocators who haven't yet formed a view on India. Go to learn the room, not to pitch. The relationships you build now pay off over 2–3 fundraising cycles.",
   },
 ];
 
-export const guidanceLists: GuidanceList[] = [
-  {
-    title: "Go when the setup is already there",
-    items: [
-      "You already have warm allocator conversations in Europe or the US.",
-      "You want LP feedback from beyond the usual Asia conference circuit.",
-      "You can commit to long-cycle relationship building rather than one-week conversion.",
-    ],
-  },
-  {
-    title: "Use the week well",
-    items: [
-      "Prioritize allocator meetings and side conversations over panel attendance.",
-      "Treat the first two summit days as a track choice, not a full-menu event.",
-      "Arrive with a narrow target list and a simple story about why India matters now.",
-    ],
-  },
-];
+export const takeFootnote =
+  "We attended SuperReturn Asia, which shapes this view. Berlin is larger and more European/US-focused — we'll share sharper insights after attending in June.";
 
 export const scheduleGroups: ScheduleGroup[] = [
   {
-    label: "Summit days",
-    window: "June 8-9",
+    label: "Summit Days",
+    window: "June 8–9",
     days: [
       {
         day: "Monday",
@@ -154,7 +101,7 @@ export const scheduleGroups: ScheduleGroup[] = [
         entries: [
           { label: "Private Debt Summit Day 1" },
           { label: "German Private Equity Summit" },
-          { label: "AI and Tech Summit" },
+          { label: "AI & Tech Summit" },
           { label: "Sports Investing Summit" },
           { label: "Women in Private Markets" },
         ],
@@ -172,32 +119,30 @@ export const scheduleGroups: ScheduleGroup[] = [
     ],
   },
   {
-    label: "Main conference",
-    window: "June 10-12",
+    label: "Main Conference",
+    window: "June 10–12",
+    main: true,
     days: [
       {
         day: "Wednesday",
         date: "10 June",
         entries: [
           { label: "State of the Union 2026", emphasis: true },
-          {
-            label: "Fundraising - Bracing for a Busy 2026?",
-            emphasis: true,
-          },
+          { label: "Fundraising — Bracing for a Busy 2026?", emphasis: true },
           { label: "David Rubenstein keynote" },
           { label: "LP-GP Matchmaking (Allocate)" },
-          { label: "Marlene Bar evening" },
+          { label: "Marlene Bar Evening" },
         ],
       },
       {
         day: "Thursday",
         date: "11 June",
         entries: [
-          { label: "Exits and Deal Activity" },
+          { label: "Exits & Deal Activity" },
           { label: "Reassessing Asia Private Equity", emphasis: true },
           { label: "Al Gore keynote" },
           { label: "LP-GP Matchmaking (Allocate)" },
-          { label: "Berlin Zoo reception" },
+          { label: "Berlin Zoo Reception (eve.)" },
         ],
       },
       {
@@ -206,7 +151,7 @@ export const scheduleGroups: ScheduleGroup[] = [
         entries: [
           { label: "Co-Investments 2026" },
           { label: "Emerging Manager Programs", emphasis: true },
-          { label: "How to Pitch workshop" },
+          { label: "How to Pitch (workshop)" },
           { label: "Closes 3 PM", muted: true },
         ],
       },
@@ -215,37 +160,36 @@ export const scheduleGroups: ScheduleGroup[] = [
 ];
 
 export const featuredSessions = [
-  "Reassessing Asia Private Equity - closed-door, Thursday",
-  "Fundraising - Bracing for a Busy 2026? - Wednesday",
-  "Emerging Manager Programs - Friday",
-  "LP-GP Matchmaking via Allocate - Wednesday and Thursday",
+  "Reassessing Asia Private Equity — closed-door, Thursday",
+  "Fundraising — Bracing for a Busy 2026? — Wednesday",
+  "Emerging Manager Programs (DEI is Dead) — Friday",
+  "LP-GP Matchmaking via Allocate — Wednesday & Thursday",
 ];
 
 export const supportOffers: Offer[] = [
   {
-    title: "10% off passes",
-    description: "Use our partner code at checkout for 10% off.",
+    title: "10% Off Passes",
+    description: "Use our partner code FKR3646IVCS at checkout for 10% off.",
   },
   {
-    title: "Event prep and insights",
-    description:
-      "Sessions, allocators to target, and a practical prep call if that helps.",
+    title: "Event Prep & Insights",
+    description: "Sessions, LPs to target, prep advice. Happy to jump on a call.",
   },
   {
-    title: "India side event",
+    title: "India Side Event",
     description:
-      "We may host a side event for Indian GPs in Berlin. Tell us if you want in.",
+      "We may host a side event for Indian GPs in Berlin. Interested? Tell us.",
   },
   {
-    title: "Already going?",
+    title: "Already Going?",
     description:
-      "Let us know and we will help coordinate with other Indian GPs attending.",
+      "Let us know! We'd love to coordinate and connect Indian GPs attending.",
   },
 ];
 
 export const sideEventNotes = [
-  "We are hearing about a few side events being organised for Indian and Asia-focused GPs during SuperReturn week in Berlin.",
-  "As we confirm details, we will keep the site updated. If you are attending, ping us directly and we will loop you in as soon as we know more.",
+  "We're hearing about a few side events being organised during SuperReturn week in Berlin. As we confirm details, we'll share them with you directly.",
+  "If you're attending, ping us — we'll loop you in as soon as we know more.",
 ];
 
 export const footerCopy = {

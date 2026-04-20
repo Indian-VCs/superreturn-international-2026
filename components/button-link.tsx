@@ -1,29 +1,43 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+type Variant = "primary" | "secondary";
+type Size = "default" | "sm";
+
 type ButtonLinkProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: Variant;
+  size?: Size;
 };
 
-const isExternalHref = (href: string) =>
-  href.startsWith("http") || href.startsWith("mailto:");
+const isExternal = (href: string) =>
+  href.startsWith("http") ||
+  href.startsWith("mailto:") ||
+  href.startsWith("#");
 
 export function ButtonLink({
   href,
   children,
   variant = "primary",
+  size = "default",
 }: ButtonLinkProps) {
-  const className = `button button--${variant}`;
+  const className = [
+    "btn",
+    variant === "primary" ? "btn-p" : "btn-s",
+    size === "sm" ? "btn-sm" : null,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
-  if (isExternalHref(href)) {
+  if (isExternal(href)) {
+    const isHttp = href.startsWith("http");
     return (
       <a
         className={className}
         href={href}
-        rel={href.startsWith("http") ? "noreferrer" : undefined}
-        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={isHttp ? "noopener noreferrer" : undefined}
+        target={isHttp ? "_blank" : undefined}
       >
         {children}
       </a>

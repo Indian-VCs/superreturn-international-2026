@@ -1,34 +1,31 @@
 import { ButtonLink } from "@/components/button-link";
 import { Logo } from "@/components/logo";
 import { contactLinks, navItems, site } from "@/lib/site-data";
-import Link from "next/link";
 
 export function SiteHeader() {
   return (
-    <header className="site-header">
-      <div className="section-shell header-shell">
+    <nav className="nav" aria-label="Primary">
+      <div className="nav-inner">
         <a
           aria-label={site.name}
-          className="header-logo"
+          className="nav-logo"
           href={site.logoHref}
-          rel="noreferrer"
-          target="_blank"
         >
           <Logo />
         </a>
-        <div className="header-actions">
-          <nav aria-label="Primary" className="header-nav">
+        <div className="nav-actions">
+          <div className="nav-links">
             {navItems.map((item) => (
-              <Link href={item.href} key={item.href}>
+              <a href={item.href} key={item.href}>
                 {item.label}
-              </Link>
+              </a>
             ))}
-          </nav>
-          <ButtonLink href={contactLinks.attend} variant="primary">
-            Reach out
+          </div>
+          <ButtonLink href={contactLinks.attend} size="sm" variant="primary">
+            Reach Out →
           </ButtonLink>
         </div>
       </div>
-    </header>
+    </nav>
   );
 }
