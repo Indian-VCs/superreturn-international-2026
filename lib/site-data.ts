@@ -190,10 +190,6 @@ export const featuredSessions = [
 
 export const supportOffers: Offer[] = [
   {
-    title: "10% Off Passes",
-    description: "Use our partner code FKR3646IVCS at checkout for 10% off.",
-  },
-  {
     title: "India Side Event",
     description:
       "We may host a side event for Indian GPs in Berlin. Interested? Tell us.",

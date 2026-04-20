@@ -149,7 +149,7 @@ export default function HomePage() {
             {sideEventNotes.map((note) => (
               <p key={note}>{note}</p>
             ))}
-            <ButtonLink href={contactLinks.sideEvents} variant="primary">
+            <ButtonLink href={contactLinks.sideEvents} variant="secondary">
               Ping us → {site.contactEmail}
             </ButtonLink>
           </div>
@@ -164,22 +164,22 @@ export default function HomePage() {
               Indian VCs is building a bridge between India's venture ecosystem and global LP networks. If you're considering SuperReturn, we're here to support.
             </p>
 
-            <div className="cta-opts">
-              {supportOffers.map((offer) => (
-                <div className="cta-o" key={offer.title}>
-                  <h4>{offer.title}</h4>
-                  <p>{offer.description}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="discount-box">
-              <p className="discount-label">10% off with our partner code</p>
+            <div className="discount-callout">
+              <p className="discount-eyebrow">10% off with our partner code</p>
               <p className="discount-code">{site.partnerCode}</p>
               <p className="discount-note">
                 Use at checkout on the official SuperReturn site
               </p>
             </div>
+
+            <dl className="cta-offers">
+              {supportOffers.map((offer) => (
+                <div className="cta-offer" key={offer.title}>
+                  <dt>{offer.title}</dt>
+                  <dd>{offer.description}</dd>
+                </div>
+              ))}
+            </dl>
 
             <div className="cta-primary">
               <ButtonLink href={contactLinks.general} variant="primary">

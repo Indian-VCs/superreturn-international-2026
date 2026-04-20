@@ -21,7 +21,7 @@ export function SiteHeader() {
               </a>
             ))}
           </div>
-          <ButtonLink href={contactLinks.attend} size="sm" variant="primary">
+          <ButtonLink href={contactLinks.attend} size="sm" variant="ghost">
             Reach Out →
           </ButtonLink>
         </div>

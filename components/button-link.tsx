@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "secondary";
+type Variant = "primary" | "secondary" | "ghost";
 type Size = "default" | "sm";
 
 type ButtonLinkProps = {
@@ -9,6 +9,12 @@ type ButtonLinkProps = {
   children: ReactNode;
   variant?: Variant;
   size?: Size;
+};
+
+const VARIANT_CLASS: Record<Variant, string> = {
+  primary: "btn-p",
+  secondary: "btn-s",
+  ghost: "btn-g",
 };
 
 const isExternal = (href: string) =>
@@ -22,11 +28,7 @@ export function ButtonLink({
   variant = "primary",
   size = "default",
 }: ButtonLinkProps) {
-  const className = [
-    "btn",
-    variant === "primary" ? "btn-p" : "btn-s",
-    size === "sm" ? "btn-sm" : null,
-  ]
+  const className = ["btn", VARIANT_CLASS[variant], size === "sm" ? "btn-sm" : null]
     .filter(Boolean)
     .join(" ");
 
