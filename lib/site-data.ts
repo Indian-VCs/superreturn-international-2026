@@ -5,9 +5,11 @@ export type NavItem = {
 
 export type TakeCardSegment = string | { bold: string };
 
+export type TakeCardParagraph = TakeCardSegment[];
+
 export type TakeCard = {
   title: string;
-  body: TakeCardSegment[];
+  body: TakeCardParagraph[];
 };
 
 export type ScheduleEntry = {
@@ -80,18 +82,33 @@ export const takeCards: TakeCard[] = [
   {
     title: "For established fund managers",
     body: [
-      "European Fund of Funds are actively looking at India right now — and SuperReturn is where they are. If European family offices, sovereign wealth, or US endowments are on your LP target list, this is a high-signal room. The hallway conversations matter more than the panels. ",
-      {
-        bold: "If you have warm leads with European allocators, this is where you make them real.",
-      },
+      [
+        "We've met with a couple of European Fund of Funds this year who are seriously scouting India right now — not just watching. Their interest isn't vague either: fintech, impact, and deep tech come up a lot, and they're open on structure — primaries, direct investments, and co-investments are all on the table.",
+      ],
+      [
+        "Our sense: if you're already in a conversation with any of them, the fact that you're in Berlin and taking the meeting in person matters. A few of these funds come with a shortlist in hand. ",
+        {
+          bold: "If you know you're on it and you're engaging, Berlin is where the needle actually moves.",
+        },
+      ],
+      [
+        "One caveat — this is our read from recent conversations. You'll meet these folks yourself and form your own view, and we'll share more after attending in June.",
+      ],
     ],
   },
   {
     title: "For emerging managers",
     body: [
-      "This isn't where you'll close your first commitment — and that's fine. The Asia-focused LP circuit is already saturated with India deal flow; the LPs here are a different audience. ",
-      { bold: "Think of it as uncharted territory:" },
-      " European and US allocators who haven't yet formed a view on India. Go to learn the room, not to pitch. The relationships you build now pay off over 2–3 fundraising cycles.",
+      [
+        "If you're in closer-mode — fund nearly wrapped, chasing the last wedge — Berlin probably isn't the room. From what we've picked up from other managers who've been, the European LPs here like to talk, engage, and marinate the relationship over cycles before they write. It's a slower rhythm than the Asia circuit.",
+      ],
+      [
+        "That said — there's an uncharted angle that's worth thinking about. European allocators come at India from different places: energy, impact, and deep tech come up a lot, and the strategies are genuinely different. ",
+        { bold: "If your thesis overlaps, Berlin puts you in front of people who haven't yet formed a view on India." },
+      ],
+      [
+        "One thing worth flagging: Berlin isn't crowded on the Indian side the way the Asia events are. Getting attention is easier, and the conversations tend to go deeper. It's a premium to pay, but if the thesis fit is there, it's the kind of room worth exploring.",
+      ],
     ],
   },
 ];
@@ -179,10 +196,6 @@ export const supportOffers: Offer[] = [
   {
     title: "10% Off Passes",
     description: "Use our partner code FKR3646IVCS at checkout for 10% off.",
-  },
-  {
-    title: "Event Prep & Insights",
-    description: "Sessions, LPs to target, prep advice. Happy to jump on a call.",
   },
   {
     title: "India Side Event",

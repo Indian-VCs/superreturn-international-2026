@@ -326,6 +326,11 @@ section[id] {
   font-size: 13.5px;
   color: var(--t2);
   line-height: 1.78;
+  margin-bottom: 12px;
+}
+
+.take p:last-child {
+  margin-bottom: 0;
 }
 
 .take strong {
