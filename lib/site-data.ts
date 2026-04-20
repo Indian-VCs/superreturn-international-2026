@@ -83,16 +83,13 @@ export const takeCards: TakeCard[] = [
     title: "For established fund managers",
     body: [
       [
-        "We've met with a couple of European Fund of Funds this year who are seriously scouting India right now — not just watching. Their interest isn't vague either: fintech, impact, and deep tech come up a lot, and they're open on structure — primaries, direct investments, and co-investments are all on the table.",
+        "We've met a couple of European Fund of Funds and other allocators this year who have already invested in a few India funds and are actively scouting to back a few more. Their interest tends to concentrate on fintech, impact, and deep tech. They're open to secondaries and co-investments.",
       ],
       [
-        "Our sense: if you're already in a conversation with any of them, the fact that you're in Berlin and taking the meeting in person matters. A few of these funds come with a shortlist in hand. ",
+        "Our take: if you're already in a conversation with any of them, ",
         {
-          bold: "If you know you're on it and you're engaging, Berlin is where the needle actually moves.",
+          bold: "Berlin is a good place to take those conversations deeper in person.",
         },
-      ],
-      [
-        "One caveat — this is our read from recent conversations. You'll meet these folks yourself and form your own view, and we'll share more after attending in June.",
       ],
     ],
   },
@@ -100,14 +97,13 @@ export const takeCards: TakeCard[] = [
     title: "For emerging managers",
     body: [
       [
-        "If you're in closer-mode — fund nearly wrapped, chasing the last wedge — Berlin probably isn't the room. From what we've picked up from other managers who've been, the European LPs here like to talk, engage, and marinate the relationship over cycles before they write. It's a slower rhythm than the Asia circuit.",
+        "If you're near your final close and looking for quick commitments, Berlin probably isn't the right room. From what we've picked up, these European LPs tend to take time to build a relationship before they write — a slower pace than the Asia circuit.",
       ],
       [
-        "That said — there's an uncharted angle that's worth thinking about. European allocators come at India from different places: energy, impact, and deep tech come up a lot, and the strategies are genuinely different. ",
-        { bold: "If your thesis overlaps, Berlin puts you in front of people who haven't yet formed a view on India." },
-      ],
-      [
-        "One thing worth flagging: Berlin isn't crowded on the Indian side the way the Asia events are. Getting attention is easier, and the conversations tend to go deeper. It's a premium to pay, but if the thesis fit is there, it's the kind of room worth exploring.",
+        "On the flip side, Berlin is less crowded on the Indian side, so attention and deeper conversations come easier. If your thesis overlaps with what these allocators focus on — energy, impact, and deep tech come up often — ",
+        {
+          bold: "this can be a worthwhile room to explore.",
+        },
       ],
     ],
   },
